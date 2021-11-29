@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-def plot_decision_boundaries(X, y, model_class, **model_params):
+def plot_decision_boundaries(X, y, model):
     """
     Function to plot the decision boundaries of a classification model.
     This uses just the first two columns of the data for fitting 
@@ -30,8 +30,6 @@ def plot_decision_boundaries(X, y, model_class, **model_params):
         print("Coercing input data to NumPy arrays failed")
     # Reduces to the first two columns of data
     reduced_data = X[:, :2]
-    # Instantiate the model object
-    model = model_class(**model_params)
     # Fits the model with the reduced data
     model.fit(reduced_data, y)
 
